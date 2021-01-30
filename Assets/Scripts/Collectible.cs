@@ -9,7 +9,12 @@ public class Collectible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this);
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+
+        }
     }
 
 }

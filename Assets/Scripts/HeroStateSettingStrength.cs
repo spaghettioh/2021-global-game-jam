@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class BallStateSettingStrength : ByTheTale.StateMachine.State
+public class HeroStateStrength : ByTheTale.StateMachine.State
 {
-    public BallFSM Ball { get { return (BallFSM)machine; } }
+    public Hero Ball { get { return (Hero)machine; } }
 
     float extraPushStrength;
     bool shouldPush;
@@ -69,6 +69,6 @@ public class BallStateSettingStrength : ByTheTale.StateMachine.State
         float finalPushAmount = Ball.pushAmount + extraPushStrength;
         Vector3 pushVector = Vector3.right * finalPushAmount;
         Ball.body.AddRelativeForce(pushVector, ForceMode2D.Impulse);
-        Ball.ChangeState<BallStateRolling>();
+        Ball.ChangeState<HeroStateMoving>();
     }
 }

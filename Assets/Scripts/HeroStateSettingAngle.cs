@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class BallStateSettingAngle : ByTheTale.StateMachine.State
+public class HeroStateSettingAngle : ByTheTale.StateMachine.State
 {
-    public BallFSM Ball { get { return (BallFSM)machine; } }
+    public Hero Ball { get { return (Hero)machine; } }
 
     public override void Enter()
     {
@@ -18,7 +18,7 @@ public class BallStateSettingAngle : ByTheTale.StateMachine.State
 
         if (Ball.setButtonPressed)
         {
-            Ball.ChangeState<BallStateSettingStrength>();
+            Ball.ChangeState<HeroStateStrength>();
         }
     }
 }

@@ -8,7 +8,7 @@ public class TriggerEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.gameObject == FindObjectOfType<BallFSM>().gameObject)
+        if (c.gameObject == FindObjectOfType<Hero>().gameObject)
         {
             onTriggerEntered.Invoke();
         }

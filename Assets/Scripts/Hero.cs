@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class BallFSM : ByTheTale.StateMachine.MachineBehaviour
+public class Hero : ByTheTale.StateMachine.MachineBehaviour
 {
     public override void AddStates()
     {
-        AddState<BallStateSettingAngle>();
-        AddState<BallStateSettingStrength>();
-        AddState<BallStateRolling>();
+        AddState<HeroStateSettingAngle>();
+        AddState<HeroStateStrength>();
+        AddState<HeroStateMoving>();
 
-        SetInitialState<BallStateSettingAngle>();
+        SetInitialState<HeroStateSettingAngle>();
     }
 
     // remove from public once max force is determined
