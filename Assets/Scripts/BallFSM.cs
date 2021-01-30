@@ -58,7 +58,7 @@ public class BallFSM : ByTheTale.StateMachine.MachineBehaviour
 
         if (reloadPressed)
         {
-            AppHelper.Reload();
+            AppHelper.Reload(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
         }
 
         // Change the length of the trail based on velocity

@@ -480,6 +480,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662072736}
+  - component: {fileID: 662072738}
+  - component: {fileID: 662072737}
   m_Layer: 0
   m_Name: First Planet (1)
   m_TagString: Untagged
@@ -501,9 +503,41 @@ Transform:
   - {fileID: 1093303748}
   - {fileID: 1424818083}
   - {fileID: 802609614}
+  - {fileID: 1545776408}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &662072737
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662072735}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.622259
+--- !u!114 &662072738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662072735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 1681591544}
+  radius: 2.31
+  strengthOfAttraction: -5
 --- !u!1 &662983275
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,9 +870,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f9bcb61cac548b5ad1b17156601b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  speed: 5
   axis: 2
-  seed: 1
+  randomizer: 0.1
 --- !u!1001 &844026643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -888,11 +922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3508587789016319389, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.17
+      value: -16.96
       objectReference: {fileID: 0}
     - target: {fileID: 3508587789016319389, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.67
+      value: 9.18
       objectReference: {fileID: 0}
     - target: {fileID: 3508587789016319389, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -932,7 +966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: pushAmount
-      value: 75
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
+      propertyPath: pushMultiplier
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
@@ -1153,9 +1191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f9bcb61cac548b5ad1b17156601b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  speed: 5
   axis: 2
-  seed: 1
+  randomizer: 0.1
 --- !u!1 &859587484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,7 +1422,6 @@ GameObject:
   - component: {fileID: 1093303748}
   - component: {fileID: 1093303751}
   - component: {fileID: 1093303750}
-  - component: {fileID: 1093303749}
   m_Layer: 0
   m_Name: Planetoid
   m_TagString: Untagged
@@ -1406,21 +1443,6 @@ Transform:
   m_Father: {fileID: 662072736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1093303749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093303747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 1681591544}
-  radius: 2.31
-  strengthOfAttraction: -5
 --- !u!58 &1093303750
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1631,7 +1653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 1681591544}
-  radius: 2.31
+  radius: 5.53
   strengthOfAttraction: -5
 --- !u!1 &1479600210
 GameObject:
@@ -1727,7 +1749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479600210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.5, y: 0.12, z: 0}
+  m_LocalPosition: {x: 29.39, y: 0.12, z: 0}
   m_LocalScale: {x: 6.8279014, y: 6.8279014, z: 6.8279014}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1816,6 +1838,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1545776407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545776408}
+  - component: {fileID: 1545776409}
+  m_Layer: 0
+  m_Name: Surface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545776408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545776407}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.9952, y: 2.9952, z: 2.9952}
+  m_Children: []
+  m_Father: {fileID: 662072736}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1545776409
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545776407}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &1630283477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,9 +2339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f9bcb61cac548b5ad1b17156601b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  speed: 5
   axis: 2
-  seed: 1
+  randomizer: 0.1
 --- !u!1001 &2001181287
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,15 +4,16 @@
 public class ObjectRotator : MonoBehaviour
 {
     public enum Axis { X, Y, Z };
-    public float rotationSpeed;
+    public float speed;
     public Axis axis;
-    [Range (1, 5)]
-    public float seed;
+    [Range (0.1f, 5)]
+    public float randomizer;
 
+    float rotationSpeed;
 
     private void Start()
     {
-        rotationSpeed = Random.Range(0, seed) * seed;
+        rotationSpeed += speed * Random.Range(0, randomizer);
     }
 
     void Update()

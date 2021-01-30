@@ -8,16 +8,16 @@ public class BallStateRolling : ByTheTale.StateMachine.State
 
     public override void PhysicsExecute()
     {
+        if (Mathf.Abs(Vector2.Distance(Ball.body.velocity, previousVelocity)) < .5f)
+        {
+            Ball.body.Sleep();
+        }
         if (Ball.body.IsSleeping())
         {
             Ball.ChangeState<BallStateSettingAngle>();
         }
-        else
-        {
-            if (Mathf.Abs(Vector2.Distance(Ball.body.velocity, previousVelocity)) < .5f)
-            {
-                Ball.body.Sleep();
-            }
+        //else
+        //{
             // TODO: finish this with LookAt()?
             //Vector3 direction = Ball.transform.position - Ball.lastPosition;
             //Vector3 localDirection = transform.InverseTransformDirection(direction);
@@ -25,6 +25,6 @@ public class BallStateRolling : ByTheTale.StateMachine.State
             //Vector3 currentPosition = transform.position;
             //pushAngle = currentPosition.y - previousPosition.y;
             //previousPosition = transform.position;
-        }
+        //}
     }
 }

@@ -1,4 +1,6 @@
-﻿public static class AppHelper
+﻿using UnityEngine.SceneManagement;
+
+public static class AppHelper
 {
 #if UNITY_WEBPLAYER
      public static string webplayerQuitURL = "http://google.com";
@@ -14,8 +16,8 @@
 #endif
     }
 
-    public static void Reload()
+    public static void Reload(Scene scene)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_00");
+        SceneManager.LoadScene(scene.name);
     }
 }
