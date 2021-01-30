@@ -44,10 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignorePressAfter: 0.5
+  activateImmediately: 0
   onKeyPressed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -59,10 +61,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   shortHoldWait: 1
+  activateAtShort: 0
   onKeyShortHold:
     m_PersistentCalls:
       m_Calls: []
   longHoldWait: 1.5
+  activateAtLong: 0
   onKeyLongHold:
     m_PersistentCalls:
       m_Calls: []
+  holdTimer: {fileID: 11400000, guid: c9562537c81720c41961ff24752c2b43, type: 2}
