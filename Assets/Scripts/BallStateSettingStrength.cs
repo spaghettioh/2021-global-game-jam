@@ -12,12 +12,15 @@ public class BallStateSettingStrength : ByTheTale.StateMachine.State
     {
         timer = 0;
         pushStrength = 0;
+        Ball.shotGraphUI.gameObject.SetActive(true);
     }
 
     public override void Execute()
     {
+        GetPushMultiplier();
+
         // Wait for user input or for the power meter to fall back to 0
-        if (Ball.setPressed)
+        if (Ball.setButtonPressed)
         {
             shouldPush = true;
         }
@@ -27,7 +30,6 @@ public class BallStateSettingStrength : ByTheTale.StateMachine.State
             shouldPush = true;
         }
 
-        GetPushMultiplier();
     }
 
     public override void PhysicsExecute()
@@ -58,11 +60,12 @@ public class BallStateSettingStrength : ByTheTale.StateMachine.State
         {
             pushStrengthNormalized = 2 - timer;
         }
+        Debug.Log(timer);
 
         // Update the strength meter
         Ball.pushStrengthMeter.value = pushStrengthNormalized;
 
-        pushStrength = pushStrengthNormalized * Ball.pushModifier;
+        pushStrength = pushStrengthNormalized * Ball.pushMultiplier;
     }
 
     void Push()

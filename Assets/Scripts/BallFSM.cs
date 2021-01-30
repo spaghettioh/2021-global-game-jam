@@ -16,7 +16,7 @@ public class BallFSM : ByTheTale.StateMachine.MachineBehaviour
     [Tooltip("The amount of force applied with no additional strength.")]
     public float pushAmount;
     [Tooltip("The max amount of force to be applied via the meter.")]
-    public float pushModifier;
+    public float pushMultiplier;
 
     public GameObject strokeAngleIndicator;
     public Canvas shotGraphUI;
@@ -32,11 +32,11 @@ public class BallFSM : ByTheTale.StateMachine.MachineBehaviour
     TrailRenderer trail;
 
     // Inputs
-    public float inputH;
-    public float inputV;
-    public bool escapePressed;
-    public bool reloadPressed;
-    public bool setPressed;
+    internal float inputH;
+    internal float inputV;
+    internal bool escapePressed;
+    internal bool reloadPressed;
+    internal bool setButtonPressed;
 
     public void Awake()
     {
@@ -54,7 +54,12 @@ public class BallFSM : ByTheTale.StateMachine.MachineBehaviour
         inputV = Input.GetAxis("Vertical");
         escapePressed = Input.GetKeyDown(KeyCode.Escape);
         reloadPressed = Input.GetKeyDown(KeyCode.R);
-        setPressed = Input.GetKeyDown(KeyCode.Space);
+        setButtonPressed = Input.GetKeyDown(KeyCode.Space);
+
+        if (reloadPressed)
+        {
+            AppHelper.Reload();
+        }
 
         // Change the length of the trail based on velocity
         trail.time = body.velocity.magnitude * 0.1f;

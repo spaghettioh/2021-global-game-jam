@@ -2,6 +2,8 @@
 
 public class BallStateRolling : ByTheTale.StateMachine.State
 {
+    Vector2 previousVelocity;
+
     public BallFSM Ball { get { return (BallFSM)machine; } }
 
     public override void PhysicsExecute()
@@ -12,6 +14,10 @@ public class BallStateRolling : ByTheTale.StateMachine.State
         }
         else
         {
+            if (Mathf.Abs(Vector2.Distance(Ball.body.velocity, previousVelocity)) < .5f)
+            {
+                Ball.body.Sleep();
+            }
             // TODO: finish this with LookAt()?
             //Vector3 direction = Ball.transform.position - Ball.lastPosition;
             //Vector3 localDirection = transform.InverseTransformDirection(direction);
