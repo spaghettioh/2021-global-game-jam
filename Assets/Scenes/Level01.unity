@@ -503,7 +503,6 @@ Transform:
   - {fileID: 1093303748}
   - {fileID: 1424818083}
   - {fileID: 802609614}
-  - {fileID: 1545776408}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -536,8 +535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 1681591544}
-  radius: 2.31
   strengthOfAttraction: -5
+  setStrengthBasedOnRadius: 0
 --- !u!1 &662983275
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +548,6 @@ GameObject:
   - component: {fileID: 662983276}
   - component: {fileID: 662983279}
   - component: {fileID: 662983278}
-  - component: {fileID: 662983277}
   m_Layer: 0
   m_Name: Planetoid
   m_TagString: Untagged
@@ -571,21 +569,6 @@ Transform:
   m_Father: {fileID: 965795596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &662983277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662983275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 1681591544}
-  radius: 2.31
-  strengthOfAttraction: -5
 --- !u!58 &662983278
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -966,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: pushAmount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: pushMultiplier
@@ -1354,6 +1337,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 905612886}
+  - component: {fileID: 905612888}
+  - component: {fileID: 905612887}
   m_Layer: 0
   m_Name: First Planet
   m_TagString: Untagged
@@ -1378,6 +1363,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &905612887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905612885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 1681591544}
+  strengthOfAttraction: 10
+  setStrengthBasedOnRadius: 0
+--- !u!58 &905612888
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905612885}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.87
 --- !u!1 &965795595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1403,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965795596}
+  - component: {fileID: 965795598}
+  - component: {fileID: 965795597}
   m_Layer: 0
   m_Name: First Planet (2)
   m_TagString: Untagged
@@ -1411,6 +1429,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965795597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965795595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 0}
+  strengthOfAttraction: 0
+  setStrengthBasedOnRadius: 1
+--- !u!58 &965795598
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965795595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.09
 --- !u!1 &1093303747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1600,6 @@ GameObject:
   - component: {fileID: 1428014380}
   - component: {fileID: 1428014379}
   - component: {fileID: 1428014378}
-  - component: {fileID: 1428014381}
   m_Layer: 0
   m_Name: Planetoid
   m_TagString: Untagged
@@ -1640,21 +1688,6 @@ Transform:
   m_Father: {fileID: 905612886}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1428014381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428014377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 1681591544}
-  radius: 5.53
-  strengthOfAttraction: -5
 --- !u!1 &1479600210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,9 +1699,8 @@ GameObject:
   - component: {fileID: 1479600213}
   - component: {fileID: 1479600212}
   - component: {fileID: 1479600211}
-  - component: {fileID: 1479600214}
   m_Layer: 0
-  m_Name: Finish Planet
+  m_Name: Surface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1748,28 +1780,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479600210}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.39, y: 0.12, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6935503}
   m_LocalScale: {x: 6.8279014, y: 6.8279014, z: 6.8279014}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1932594782}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1479600214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479600210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 1681591544}
-  radius: 4.79
-  strengthOfAttraction: 0
 --- !u!1 &1513373190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,53 +1855,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1545776407
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1545776408}
-  - component: {fileID: 1545776409}
-  m_Layer: 0
-  m_Name: Surface
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1545776408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545776407}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9952, y: 2.9952, z: 2.9952}
-  m_Children: []
-  m_Father: {fileID: 662072736}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1545776409
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545776407}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!1 &1630283477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,8 +2090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 1681591544}
-  radius: 0
   strengthOfAttraction: 0
+  setStrengthBasedOnRadius: 0
 --- !u!1 &1903335243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2312,70 @@ MonoBehaviour:
   speed: 5
   axis: 2
   randomizer: 0.1
+--- !u!1 &1932594779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1932594782}
+  - component: {fileID: 1932594781}
+  - component: {fileID: 1932594780}
+  m_Layer: 0
+  m_Name: Finish planet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1932594780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932594779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7b542e3a46c9748841ee246a7b4266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 0}
+  strengthOfAttraction: 0
+  setStrengthBasedOnRadius: 1
+--- !u!58 &1932594781
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932594779}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10.45
+--- !u!4 &1932594782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932594779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.51, y: 0.53, z: -1.6935503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1479600213}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2001181287
 PrefabInstance:
   m_ObjectHideFlags: 0
