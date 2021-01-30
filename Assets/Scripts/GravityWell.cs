@@ -24,11 +24,8 @@ public class GravityWell : MonoBehaviour
             {
                 gravity = GetComponent<CircleCollider2D>().radius;
             }
-            else
-            {
-                p.AddForce(-gravity * distance.normalized, ForceMode2D.Force);
 
-            }
+            p.AddForce(-gravity * distance.normalized, ForceMode2D.Force);
         }
     }
 }

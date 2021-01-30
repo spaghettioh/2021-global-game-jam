@@ -9,11 +9,7 @@ public class Planet : MonoBehaviour
     public Sprite collectibleSprite;
 
 
-    private void OnSceneGUI()
-    {
-        collectible.GetComponent<SpriteRenderer>().sprite = collectibleSprite;
         
-    }
 
     // Start is called before the first frame update
     void Start()
