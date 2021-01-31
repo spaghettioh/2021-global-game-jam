@@ -83,6 +83,7 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
         if (finished)
         {
             finishEvent.Invoke();
+            finished = false;
         }
     }
 
