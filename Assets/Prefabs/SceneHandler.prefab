@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78423d326bbbf049876b80d464f8da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSceneName: Opening
-  nextSceneName: Level01
+  thisSceneName: 
+  nextSceneName: 
   progressBar: {fileID: 641860015865879079, guid: ae4f48fa39a039e4b862edd7f1b45989, type: 3}
   loadingProgressText: {fileID: 0}
   scrim: {fileID: 8169956769815439522, guid: ff47c8ab0b5b4ef46a9d9650e36f4dc3, type: 3}
+  onLoad: {fileID: 11400000, guid: ef59220236aa9bb4c936aef0a8dab737, type: 2}

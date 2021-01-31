@@ -6,19 +6,12 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
 {
     public override void AddStates()
     {
-        //AddState<HeroStateSettingAngle>();
         AddState<HeroStateSettingStrength>();
         AddState<HeroStateRepositioning>();
         AddState<HeroStateMoving>();
 
         SetInitialState<HeroStateMoving>();
     }
-
-    public Canvas finishScreen;
-
-    [HideInInspector]
-    public bool finished;
-    public UnityEvent finishEvent;
 
     // remove from public once max force is determined
     [Tooltip("The amount of force applied with no additional strength.")]
@@ -75,11 +68,6 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
         // Change the length of the trail based on velocity
         trail.time = body.velocity.magnitude * 0.1f;
 
-        if (finished)
-        {
-            finishEvent.Invoke();
-            finished = false;
-        }
     }
 
     public void TriggerMovementFromTutorial()

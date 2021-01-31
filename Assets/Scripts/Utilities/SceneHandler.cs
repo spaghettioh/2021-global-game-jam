@@ -13,13 +13,13 @@ public class SceneHandler : MonoBehaviour
     public Slider progressBar;
     public TMP_Text loadingProgressText;
     public Image scrim;
-    public UnityEvent onLoad;
+    public GameEventVariable onLoad;
     bool readyToPlay = false;
 
     private void Start()
     {
         scrim.gameObject.SetActive(true);
-        onLoad.Invoke();
+        onLoad.Raise();
         WaitForSeconds(1f);
         Time.timeScale = 1;
     }

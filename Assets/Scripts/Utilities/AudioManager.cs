@@ -24,12 +24,6 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        bass.volume = 0;
-        chords.volume = 0;
-        drums.volume = 0;
-        fx.volume = 0;
-        melody.volume = 0;
     }
 
 

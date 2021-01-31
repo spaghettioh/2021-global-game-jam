@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1834356076831658330}
   - component: {fileID: 1834356076831658309}
+  - component: {fileID: 2371649243039635789}
+  - component: {fileID: 1938879974101903290}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -33,7 +35,6 @@ Transform:
   - {fileID: 1834356077009485398}
   - {fileID: 1834356078567631594}
   - {fileID: 1834356078601221367}
-  - {fileID: 2407093121920183559}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,6 +55,62 @@ MonoBehaviour:
   drums: {fileID: 1834356077009485393}
   fx: {fileID: 1834356078567631573}
   melody: {fileID: 1834356078601221366}
+--- !u!114 &2371649243039635789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834356076831658308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78754622d49b446bbfbaa81e7c4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 010964a5567439844adbe29cc60d72fa, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1834356076831658309}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FadeOutNonAmbient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1938879974101903290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834356076831658308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78754622d49b446bbfbaa81e7c4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: f60eeb148d498054397ba38e4621d3a6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1834356076831658309}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FadeInAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1834356077009485392
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834356077009485398}
   - component: {fileID: 1834356077009485393}
+  - component: {fileID: 6487280540026314211}
   m_Layer: 0
   m_Name: drums
   m_TagString: Untagged
@@ -181,6 +239,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6487280540026314211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834356077009485392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78754622d49b446bbfbaa81e7c4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 3f3bd3999dd077948803e7bca4b043bf, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1834356076831658309}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1834356077009485393}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1834356077628831843
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834356078567631594}
   - component: {fileID: 1834356078567631573}
+  - component: {fileID: 4617797492363686874}
   m_Layer: 0
   m_Name: fx
   m_TagString: Untagged
@@ -562,6 +649,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4617797492363686874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834356078567631572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78754622d49b446bbfbaa81e7c4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0fc8bd0f3b041014e8aff032a7e504cc, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1834356076831658309}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1834356078567631573}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1834356078601221361
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834356078601221367}
   - component: {fileID: 1834356078601221366}
+  - component: {fileID: 3344031577457961517}
   m_Layer: 0
   m_Name: melody
   m_TagString: Untagged
@@ -689,81 +805,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &7050513437989627817
-PrefabInstance:
+--- !u!114 &3344031577457961517
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1834356076831658330}
-    m_Modifications:
-    - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: start
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1834356076831658309}
-    - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayAmbient
-      objectReference: {fileID: 0}
-    - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 869.133
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 540.6854
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.722137
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7474110092930768349, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-      propertyPath: m_Name
-      value: PlayAmbient
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
---- !u!4 &2407093121920183559 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4665662062983891630, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
-  m_PrefabInstance: {fileID: 7050513437989627817}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834356078601221361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b78754622d49b446bbfbaa81e7c4722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: bdc2ce9a0d5b81c4f93c7461eab8c6ba, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1834356076831658309}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: FadeIn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1834356078601221366}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

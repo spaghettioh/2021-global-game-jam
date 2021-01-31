@@ -6,7 +6,7 @@ public enum PlanetType { Static, Moving, Circling, Rotating }
 
 public class Planet : MonoBehaviour
 {
-
+    public GameEventVariable onCollisionWithPlayer;
     public Transform nextShotPosition;
 
     public PlanetType type = PlanetType.Static;
@@ -146,5 +146,12 @@ public class Planet : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            onCollisionWithPlayer.Raise();
+        }
+    }
 
 }

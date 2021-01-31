@@ -29,11 +29,11 @@ public class HandleInput : MonoBehaviour
     [Tooltip("This allows other scripts to know how long inputs are held.")]
     public FloatVariable holdTimer;
 
-    float keyDownTimer;
-    protected List<KeyCode> activeInputs = new List<KeyCode>();
+    public float keyDownTimer;
+    public List<KeyCode> activeInputs = new List<KeyCode>();
         List<KeyCode> pressedInput;
         List<KeyCode> releasedInputs;
-    bool keyHeldPrevious;
+    public bool keyHeldPrevious;
 
     // Check the configuraiton.
     private void Start()
