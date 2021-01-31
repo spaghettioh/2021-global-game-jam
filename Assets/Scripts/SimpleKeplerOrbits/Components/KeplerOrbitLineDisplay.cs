@@ -199,8 +199,8 @@ namespace SimpleKeplerOrbits
 			if (LineRendererReference == null)
 			{
 				LineRendererReference = GetComponent<LineRenderer>();
-#endif
 			}
 		}
+#endif
 	}
 }

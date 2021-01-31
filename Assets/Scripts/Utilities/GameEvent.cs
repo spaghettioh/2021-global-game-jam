@@ -15,7 +15,7 @@ public class GameEvent : MonoBehaviour
 
     [SerializeField]
     [TextArea]
-    private string note = "The event can be invoked manually by calling\nManuallyFire(float seconds).";
+    private readonly string note = "The event can be invoked manually by calling\nManuallyFire(float seconds).";
 
     [Header("Delayed?")]
     public float delayTime;
@@ -33,7 +33,7 @@ public class GameEvent : MonoBehaviour
                 Debug.Log(gameObject.name + " is awake.");
             }
 
-            StartCoroutine("FireEvent");
+            StartCoroutine(FireEvent());
         }
     }
 
@@ -46,7 +46,7 @@ public class GameEvent : MonoBehaviour
                 Debug.Log(gameObject.name + " has started.");
             }
 
-            StartCoroutine("FireEvent");
+            StartCoroutine(FireEvent());
         }
     }
 
@@ -59,7 +59,7 @@ public class GameEvent : MonoBehaviour
                 Debug.Log(gameObject.name + " is updating.");
             }
 
-            StartCoroutine("FireEvent");
+            StartCoroutine(FireEvent());
         }
     }
 
@@ -72,7 +72,7 @@ public class GameEvent : MonoBehaviour
                 Debug.Log(gameObject.name + " is fixed updating.");
             }
 
-            StartCoroutine("FireEvent");
+            StartCoroutine(FireEvent());
         }
     }
 
@@ -87,7 +87,7 @@ public class GameEvent : MonoBehaviour
         {
             delayTime = seconds;
         }
-        StartCoroutine("FireEvent");
+        StartCoroutine(FireEvent());
     }
 
     IEnumerator FireEvent()

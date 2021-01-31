@@ -3,14 +3,14 @@
 public class HeroStateRepositioning : ByTheTale.StateMachine.State
 {
     public Hero Hero { get { return (Hero)machine; } }
-    float moveTime;
+    //float moveTime;
     bool ready;
 
-    float currentAngle;
+    //float currentAngle;
 
     public override void Enter()
     {
-        moveTime = 0;
+        //moveTime = 0;
         Hero.body.velocity = Vector2.zero;
         Hero.body.angularVelocity = 0;
     }
