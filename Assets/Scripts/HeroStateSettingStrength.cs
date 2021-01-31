@@ -12,14 +12,17 @@ public class HeroStateSettingStrength : ByTheTale.StateMachine.State
     {
         timer = 0;
         extraPushStrength = 0;
-        Hero.shotGraphUI.gameObject.SetActive(true);
+        Hero.strokeAngleIndicator.SetActive(true);
+
+        //Hero.shotGraphUI.gameObject.SetActive(true);
     }
 
     public override void Execute()
     {
 
         // Wait for user input or for the power meter to fall back to 0
-        if (Hero.setButtonPressed)
+        //if (Hero.setButtonPressed)
+        if (Hero.triggeredFromTutorial)
         {
             shouldPush = true;
         }

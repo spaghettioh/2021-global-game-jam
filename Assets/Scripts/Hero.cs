@@ -18,7 +18,7 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
 
     [HideInInspector]
     public bool finished;
-    public Event finishEvent;
+    public UnityEvent finishEvent;
 
     // remove from public once max force is determined
     [Tooltip("The amount of force applied with no additional strength.")]
@@ -45,11 +45,14 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
     internal bool escapePressed;
     internal bool reloadPressed;
     internal bool setButtonPressed;
+    public bool triggeredFromTutorial;
 
     [HideInInspector]
     public GameObject lastCollidedWith;
     [HideInInspector]
     public float targetShotAngle;
+
+
 
     public void Awake()
     {
@@ -63,11 +66,11 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
     public override void Update()
     {
         base.Update();
-        inputH = Input.GetAxis("Horizontal");
-        inputV = Input.GetAxis("Vertical");
+        //inputH = Input.GetAxis("Horizontal");
+        //inputV = Input.GetAxis("Vertical");
         escapePressed = Input.GetKeyDown(KeyCode.Escape);
         reloadPressed = Input.GetKeyDown(KeyCode.R);
-        setButtonPressed = Input.GetKeyDown(KeyCode.Space);
+        //setButtonPressed = Input.GetKeyDown(KeyCode.Space);
 
         if (reloadPressed)
         {
@@ -79,9 +82,12 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
 
         if (finished)
         {
-            finishScreen.gameObject.SetActive(true);
+            finishEvent.Invoke();
         }
+    }
 
-        // TODO: Slow the ball over time
+    public void TriggerMovementFromTutorial()
+    {
+        triggeredFromTutorial = true;
     }
 }
