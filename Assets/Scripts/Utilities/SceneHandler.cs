@@ -12,9 +12,12 @@ public class SceneHandler : MonoBehaviour
     public Slider progressBar;
     public TMP_Text loadingProgressText;
     public Image scrim;
+    bool readyToPlay = false;
 
     private void Start()
     {
+        scrim.gameObject.SetActive(true);
+        StartCoroutine(ArtificialWait(false));
         Time.timeScale = 1;
     }
 
@@ -22,7 +25,7 @@ public class SceneHandler : MonoBehaviour
     {
         if (nextSceneName != "")
         {
-            StartCoroutine(ArtificialWait());
+            StartCoroutine(ArtificialWait(true));
             //SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
             //return;
         }
@@ -32,18 +35,46 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    IEnumerator ArtificialWait()
+    IEnumerator ArtificialWait(bool loadNextLevel)
     {
         scrim.gameObject.SetActive(true);
-        progressBar.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(LoadSceneAsynchronously());
+
+
+        if (loadNextLevel)
+        {
+            progressBar.gameObject.SetActive(true);
+            for (float i = 0; i <= 1; i += Time.deltaTime)
+            {
+                // set color with i as alpha
+                scrim.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            if (loadNextLevel)
+            {
+                StartCoroutine(LoadSceneAsynchronously());
+            }
+        }
+        else
+        {
+            for (float i = 1; i >= 0; i -= Time.deltaTime)
+            {
+                // set color with i as alpha
+                scrim.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+
+        }
+
+
+        //scrim.CrossFadeAlpha(1, 1, false);
     }
 
     IEnumerator LoadSceneAsynchronously()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(nextSceneName);
-
 
         while (!operation.isDone)
         {
