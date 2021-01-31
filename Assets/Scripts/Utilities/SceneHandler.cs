@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class SceneHandler : MonoBehaviour
 {
@@ -12,20 +13,27 @@ public class SceneHandler : MonoBehaviour
     public Slider progressBar;
     public TMP_Text loadingProgressText;
     public Image scrim;
+    public UnityEvent onLoad;
     bool readyToPlay = false;
 
     private void Start()
     {
         scrim.gameObject.SetActive(true);
-        StartCoroutine(ArtificialWait(false));
+        onLoad.Invoke();
+        WaitForSeconds(1f);
         Time.timeScale = 1;
+    }
+
+    public void WaitForSeconds(float wait)
+    {
+        StartCoroutine(ArtificialWait(false, wait));
     }
 
     public void LoadASceneAsync()
     {
         if (nextSceneName != "")
         {
-            StartCoroutine(ArtificialWait(true));
+            StartCoroutine(ArtificialWait(true, 1f));
             //SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Additive);
             //return;
         }
@@ -35,7 +43,7 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    IEnumerator ArtificialWait(bool loadNextLevel)
+    IEnumerator ArtificialWait(bool loadNextLevel, float wait)
     {
         scrim.gameObject.SetActive(true);
 
@@ -50,7 +58,7 @@ public class SceneHandler : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(wait);
 
             if (loadNextLevel)
             {

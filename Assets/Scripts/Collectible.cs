@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Collectible : MonoBehaviour
 {
+    public UnityEvent collected;
+
     [HideInInspector]
     public Sprite collectibleSprite;
 
@@ -12,7 +15,7 @@ public class Collectible : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            collected.Invoke();
 
         }
     }

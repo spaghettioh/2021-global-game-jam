@@ -25,6 +25,7 @@ public class HeroStateSettingStrength : ByTheTale.StateMachine.State
         if (Hero.triggeredFromTutorial)
         {
             shouldPush = true;
+            Hero.triggeredFromTutorial = false;
         }
         //else if (timer > 1 && pushStrength < .1f)
         //{
