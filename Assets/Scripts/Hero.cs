@@ -1,16 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Hero : ByTheTale.StateMachine.MachineBehaviour
 {
     public override void AddStates()
     {
-        AddState<HeroStateSettingAngle>();
-        AddState<HeroStateStrength>();
+        //AddState<HeroStateSettingAngle>();
+        AddState<HeroStateSettingStrength>();
+        AddState<HeroStateRepositioning>();
         AddState<HeroStateMoving>();
 
-        SetInitialState<HeroStateSettingAngle>();
+        SetInitialState<HeroStateMoving>();
     }
+
+    public Canvas finishScreen;
+
+    [HideInInspector]
+    public bool finished;
+    public Event finishEvent;
 
     // remove from public once max force is determined
     [Tooltip("The amount of force applied with no additional strength.")]
@@ -38,6 +46,11 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
     internal bool reloadPressed;
     internal bool setButtonPressed;
 
+    [HideInInspector]
+    public GameObject lastCollidedWith;
+    [HideInInspector]
+    public float targetShotAngle;
+
     public void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -63,6 +76,11 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
 
         // Change the length of the trail based on velocity
         trail.time = body.velocity.magnitude * 0.1f;
+
+        if (finished)
+        {
+            finishScreen.gameObject.SetActive(true);
+        }
 
         // TODO: Slow the ball over time
     }

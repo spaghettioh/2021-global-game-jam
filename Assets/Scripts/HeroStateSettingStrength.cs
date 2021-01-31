@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class HeroStateStrength : ByTheTale.StateMachine.State
+public class HeroStateSettingStrength : ByTheTale.StateMachine.State
 {
-    public Hero Ball { get { return (Hero)machine; } }
+    public Hero Hero { get { return (Hero)machine; } }
 
     float extraPushStrength;
     bool shouldPush;
@@ -12,14 +12,14 @@ public class HeroStateStrength : ByTheTale.StateMachine.State
     {
         timer = 0;
         extraPushStrength = 0;
-        Ball.shotGraphUI.gameObject.SetActive(true);
+        Hero.shotGraphUI.gameObject.SetActive(true);
     }
 
     public override void Execute()
     {
 
         // Wait for user input or for the power meter to fall back to 0
-        if (Ball.setButtonPressed)
+        if (Hero.setButtonPressed)
         {
             shouldPush = true;
         }
@@ -29,12 +29,18 @@ public class HeroStateStrength : ByTheTale.StateMachine.State
         //    shouldPush = true;
         //}
 
-        GetPushMultiplier();
-        Debug.Log(Ball.pushPitch);
+        //GetPushMultiplier();
     }
 
     public override void PhysicsExecute()
     {
+        Transform nextShot = Hero.lastCollidedWith.GetComponent<Planet>().nextShotPosition;
+
+        Hero.transform.position = nextShot.position;
+        Hero.transform.rotation = nextShot.rotation;
+        Hero.body.Sleep();
+        Hero.body.velocity = Vector2.zero;
+        Hero.body.angularVelocity = 0;
         if (shouldPush)
         {
             shouldPush = false;
@@ -52,23 +58,23 @@ public class HeroStateStrength : ByTheTale.StateMachine.State
         // Get a normalized value to make the power meter go up/down
         timer += Time.deltaTime;
         float pushStrengthNormalized = Mathf.PingPong(timer, 1);
-        extraPushStrength = pushStrengthNormalized * Ball.pushMultiplier;
+        extraPushStrength = pushStrengthNormalized * Hero.pushMultiplier;
 
         // Update the strength meter
-        Ball.pushStrengthMeter.value = pushStrengthNormalized;
+        Hero.pushStrengthMeter.value = pushStrengthNormalized;
     }
 
     void Push()
     {
         // Turn off the angle arrow and shot graph
-        Ball.strokeAngleIndicator.SetActive(false);
-        Ball.shotGraphUI.gameObject.SetActive(false);
+        Hero.strokeAngleIndicator.SetActive(false);
+        Hero.shotGraphUI.gameObject.SetActive(false);
 
         // Add any extra force to the default push amount and
         // push in the direction chosen
-        float finalPushAmount = Ball.pushAmount + extraPushStrength;
-        Vector3 pushVector = Vector3.right * finalPushAmount;
-        Ball.body.AddRelativeForce(pushVector, ForceMode2D.Impulse);
-        Ball.ChangeState<HeroStateMoving>();
+        float finalPushAmount = Hero.pushAmount + extraPushStrength;
+        Vector3 pushVector = Vector3.up * finalPushAmount;
+        Hero.body.AddRelativeForce(pushVector, ForceMode2D.Impulse);
+        Hero.ChangeState<HeroStateMoving>();
     }
 }

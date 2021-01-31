@@ -117,6 +117,7 @@
         }
 
         public virtual void OnCollisionEnter(UnityEngine.Collision collision) { currentState.OnCollisionEnter(collision); }
+        public virtual void OnCollisionEnter2D(UnityEngine.Collision2D collision) { currentState.OnCollisionEnter2D(collision); }
         public virtual void OnCollisionStay(UnityEngine.Collision collision) { currentState.OnCollisionStay(collision); }
         public virtual void OnCollisionExit(UnityEngine.Collision collision) { currentState.OnCollisionExit(collision); }
 

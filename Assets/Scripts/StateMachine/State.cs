@@ -1,5 +1,5 @@
 ﻿// COMMENT TO SILENCE
-#define BYTHETALE_STATEMACHINE_VERBOSE
+//#define BYTHETALE_STATEMACHINE_VERBOSE
 
 using UnityEngine;
 
@@ -13,6 +13,12 @@ namespace ByTheTale.StateMachine
         public virtual void PostExecute() { }
 
         public virtual void OnCollisionEnter(Collision collision)
+        {
+#if (BYTHETALE_STATEMACHINE_VERBOSE)
+            Debug.Log(machine.name + "." + GetType().Name + "::" + System.Reflection.MethodBase.GetCurrentMethod().Name + "()");
+#endif // BYTHETALE_STATEMACHINE_VERBOSE
+        }
+        public virtual void OnCollisionEnter2D(Collision2D collision)
         {
 #if (BYTHETALE_STATEMACHINE_VERBOSE)
             Debug.Log(machine.name + "." + GetType().Name + "::" + System.Reflection.MethodBase.GetCurrentMethod().Name + "()");

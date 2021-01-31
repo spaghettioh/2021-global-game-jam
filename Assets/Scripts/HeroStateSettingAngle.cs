@@ -18,7 +18,7 @@ public class HeroStateSettingAngle : ByTheTale.StateMachine.State
 
         if (Ball.setButtonPressed)
         {
-            Ball.ChangeState<HeroStateStrength>();
+            Ball.ChangeState<HeroStateSettingStrength>();
         }
     }
 }
