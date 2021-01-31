@@ -12,7 +12,6 @@ public class HeroStateSettingStrength : ByTheTale.StateMachine.State
     {
         timer = 0;
         extraPushStrength = 0;
-        Hero.strokeAngleIndicator.SetActive(true);
 
         //Hero.shotGraphUI.gameObject.SetActive(true);
     }
@@ -71,7 +70,6 @@ public class HeroStateSettingStrength : ByTheTale.StateMachine.State
     void Push()
     {
         // Turn off the angle arrow and shot graph
-        Hero.strokeAngleIndicator.SetActive(false);
         Hero.shotGraphUI.gameObject.SetActive(false);
 
         // Add any extra force to the default push amount and

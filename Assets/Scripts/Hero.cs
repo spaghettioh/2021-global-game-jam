@@ -26,7 +26,6 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
     [Tooltip("The max amount of force to be applied via the meter.")]
     public float pushMultiplier;
 
-    public GameObject strokeAngleIndicator;
     public Canvas shotGraphUI;
     public Slider pushStrengthMeter;
     //internal Slider englishLeftRightMeter;
@@ -72,10 +71,6 @@ public class Hero : ByTheTale.StateMachine.MachineBehaviour
         reloadPressed = Input.GetKeyDown(KeyCode.R);
         //setButtonPressed = Input.GetKeyDown(KeyCode.Space);
 
-        if (reloadPressed)
-        {
-            AppHelper.Reload(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
-        }
 
         // Change the length of the trail based on velocity
         trail.time = body.velocity.magnitude * 0.1f;
