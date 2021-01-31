@@ -11684,9 +11684,6 @@ MonoBehaviour:
   start: 0
   update: 0
   fixedUpdate: 0
-  note: 'The event can be invoked manually by calling
-
-    ManuallyFire(float seconds).'
   delayTime: 0
   showDebug: 0
 --- !u!4 &1704876424
@@ -12667,6 +12664,10 @@ PrefabInstance:
     - target: {fileID: 1834356076831658330, guid: 6bd662d4873e68c4da47707796d9e6bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087026644599115186, guid: 6bd662d4873e68c4da47707796d9e6bf, type: 3}
+      propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayAll
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bd662d4873e68c4da47707796d9e6bf, type: 3}

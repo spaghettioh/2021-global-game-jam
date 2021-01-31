@@ -7780,11 +7780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
       propertyPath: delayTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
       propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
       propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -7809,11 +7809,11 @@ PrefabInstance:
     - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
       propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1595595859}
+      objectReference: {fileID: 62403802}
     - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
       propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1840082195}
+      objectReference: {fileID: 551646223}
     - target: {fileID: 2288934768066849307, guid: 22fd29e955a2d0c4ab3c2809cdb1a88d, type: 3}
       propertyPath: gameEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -8194,7 +8194,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2646839017426887255, guid: 949956341cc1e2d4d956206219d30234, type: 3}
       propertyPath: m_Name
-      value: Input handler - Finished
+      value: Input - Finished
       objectReference: {fileID: 0}
     - target: {fileID: 2646839017426887255, guid: 949956341cc1e2d4d956206219d30234, type: 3}
       propertyPath: m_IsActive
@@ -8400,7 +8400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5921020680962899448, guid: 949956341cc1e2d4d956206219d30234, type: 3}
       propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5921020680962899448, guid: 949956341cc1e2d4d956206219d30234, type: 3}
       propertyPath: onKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9809,6 +9809,34 @@ PrefabInstance:
       propertyPath: loadingProgressText
       value: 
       objectReference: {fileID: 350731072}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2016497994}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FadeOutNonAmbient
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8445095898498992185, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
       propertyPath: m_RootOrder
       value: 14

@@ -6803,7 +6803,7 @@ PrefabInstance:
       objectReference: {fileID: 1354487524}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6823,7 +6823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6844,7 +6844,7 @@ PrefabInstance:
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1681591546}
+      objectReference: {fileID: 1763013246}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6883,7 +6883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: set_enabled
+      value: FadeInAll
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -6903,7 +6903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: UnityEngine.Behaviour, UnityEngine
+      value: AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8609046562582291078, guid: 4c507b774fa9d6f4ba5e8179cec10bbf, type: 3}
       propertyPath: finishEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -10910,6 +10910,34 @@ PrefabInstance:
       propertyPath: loadingProgressText
       value: 
       objectReference: {fileID: 350731072}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763013246}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FadeOutNonAmbient
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8445095898498992184, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
+      propertyPath: onLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8445095898498992185, guid: 7664fe094e8e6974d9d07aa38cf7441d, type: 3}
       propertyPath: m_RootOrder
       value: 17

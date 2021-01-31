@@ -55,9 +55,9 @@ MonoBehaviour:
   collected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1504863534934281604}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 1504863534934281601}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
